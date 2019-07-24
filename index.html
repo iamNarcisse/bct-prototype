@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>BlueDrive</title>
+  </head>
+  <body>
+    <div class="header">
+      <div>Team Narcisse's Prototype</div>
+    </div>
+    <div class="container">
+      <div class="card">
+        <div style="margin-top: 40px; margin-bottom: 40px">
+          <input
+            type="text"
+            size="6"
+            onchange="Restore()"
+            placeholder="sand"
+            id="sand"
+          />
+          <input
+            type="text"
+            size="6"
+            onchange="Restore()"
+            placeholder="silt"
+            id="silt"
+          />
+          <input
+            type="text"
+            size="6"
+            onchange="Restore()"
+            placeholder="clay"
+            id="clay"
+          />
+        </div>
+        <div>
+          <button id="calculate" class="button-bg">Analyse</button>
+        </div>
+
+        <div id="answer" class="result hide">
+          <div style="margin-bottom: 4px;">
+            Soil Type : <span style="font-weight: 600;" id="soilType"></span>
+          </div>
+          <div style="margin-bottom: 4px;">Crops to Cultivate</div>
+          <div><em id="crop_a"></em></div>
+          <div><em id="crop_b"></em></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script>
+      function Restore() {
+        document.getElementById("answer").className = "result hide";
+      }
+    </script>
+  </body>
+</html>
