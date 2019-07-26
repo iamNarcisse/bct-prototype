@@ -24,17 +24,23 @@ function handleCalculate() {
   const soilSample = {
     sand,
     silt,
-    clay
+    clay,
+    sum: parseFloat(sand) + parseFloat(silt) + parseFloat(clay)
   };
+
+  if (soilSample.sum > 100) {
+    alert("Error: Soil sample values more than 100");
+    return;
+  }
 
   //Determine Loam Soil
   if (
-    soilSample.clay >= 7.5 &&
-    soilSample.clay <= 27.5 &&
-    soilSample.sand >= 22.5 &&
-    soilSample.sand <= 52.5 &&
-    soilSample.silt >= 27.5 &&
-    soilSample.silt <= 50
+    parseFloat(soilSample.clay) >= 7.5 &&
+    parseFloat(soilSample.clay) <= 27.5 &&
+    parseFloat(soilSample.sand) >= 22.5 &&
+    parseFloat(soilSample.sand) <= 52.5 &&
+    parseFloat(soilSample.silt) >= 27.5 &&
+    parseFloat(soilSample.silt) <= 50
   ) {
     let crops = {
       a: "Tomatoes",
